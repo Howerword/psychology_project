@@ -14,81 +14,19 @@
 		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
-		<header>
-			<div class="container">
-				<nav class="navbar">
-					<div class="logo">
-						<a href="index.html">Альона Ступак</a>
-					</div>
-					<div class="nav_wrapper-links">
-						<ul class="nav-links">
-							<li><a href="index.html">Головна</a></li>
-							<li><a href="about.html">Про мене</a></li>
-							<li><a href="testimonials.html">Відгуки</a></li>
-							<li><a href="contact.html">Контакти</a></li>
-						</ul>
-						<a href="contact.html" class="button-primary">Записатися</a>
-					</div>
-				</nav>
-			</div>
-		</header>
-
+		<section data-include="header.html"></section>
 		<main>
-			<div class="container">
-				<section class="hero">
-					<h1>Професійна психологічна допомога</h1>
-					<p>Допомога</p>
-					<a href="contact.html" class="button">Записатися на консультацію</a>
-				</section>
+			<section data-include="main.html"></section>
 
-				<section class="about">
-					<h2>Про мене</h2>
-					<p>
-						СТУПАК АЛЬОНА дипломована психологиня-консультантка (в галузі
-						практичної психології)
-					</p>
-					<p>
-						• більше 2 років досвіду роботи • 600+ годин консультування •
-						освіта: — Державний торговельно-економічний університет (м.Київ),
-						отриманий ступінь бакалавра + здобуваю ступінь магістра; ...
-					</p>
-				</section>
+			<section data-include="about.html"></section>
 
-				<section class="testimonials">
-					<h2>Відгуки</h2>
-					<div class="testimonials-container">
-						<div class="testimonials-item">
-							<img src="images/testimonial-1.jpg" alt="Testimonial 1" />
-							<p>“Альона допомогла мені подолати тривогу.” — Олена</p>
-						</div>
-						<div class="testimonials-item">
-							<img src="images/testimonial-2.jpg" alt="Testimonial 2" />
-							<p>“Консультації Альони змінили моє життя.” — Андрій</p>
-						</div>
-						<div class="testimonials-item">
-							<img src="images/testimonial-3.jpg" alt="Testimonial 3" />
-							<p>“Рекомендую Альону всім.” — Ірина</p>
-						</div>
-					</div>
-				</section>
+			<section data-include="testimonials.html"></section>
 
-				<section class="contact">
-					<h2>Контакти</h2>
-					<p>Записатися на консультацію</p>
-					<ul>
-						<li>
-							Email: <a href="mailto:aliona@example.com">aliona@example.com</a>
-						</li>
-						<li>Телефон: <a href="tel:+380123456789">+380 12 345 67 89</a></li>
-					</ul>
-					<a href="contact.html" class="button">Записатися на консультацію</a>
-				</section>
-			</div>
+			<section data-include="contact.html"></section>
 		</main>
+		<section data-include="footer.html"></section>
 
-		<footer>
-			<p>© 2023 Альона Ступак. Всі права захищені.</p>
-		</footer>
+		<script src="https://unpkg.com/html-data-include@3.3.3/html-data-include.js"></script>
 		<script src="js/scripts.js"></script>
 	</body>
 </html>
