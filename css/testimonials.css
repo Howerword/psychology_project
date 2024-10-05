@@ -1,0 +1,46 @@
+.testimonials {
+	background-color: var(--background-color);
+	padding: 50px 0;
+	text-align: center;
+	color: var(--text-color);
+}
+
+.testimonials h2 {
+	font-size: 2rem;
+	color: var(--secondary-color);
+	margin-bottom: 20px;
+}
+
+.testimonials-container {
+	display: flex;
+	justify-content: space-around;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.testimonials-item {
+	background-color: var(--items-color);
+	padding: 20px;
+	border-radius: 10px;
+	width: 30%;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials-item img {
+	width: 100%;
+	border-radius: 50%;
+	margin-bottom: 15px;
+}
+
+.testimonials-item p {
+	font-size: 1rem;
+	font-style: italic;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+	.testimonials-item {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,27 @@
+.about {
+	background-color: var(--background-color);
+	padding: 50px 0;
+	text-align: center;
+	color: var(--text-color);
+}
+
+.about h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: var(--secondary-color);
+}
+
+.about p {
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.6;
+	margin-bottom: 15px;
+	color: var(--text-color);
+}
+
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
