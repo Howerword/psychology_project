@@ -1,8 +1,10 @@
-document.addEventListener("partialLoaded", () => {});
+document.addEventListener("DOMContentLoaded", () => {
+	console.log("HTML завантажено повністю");
+	// Додаткові дії після завантаження HTML, наприклад ініціалізація подій.
+});
 
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".navbar-links");
+document.addEventListener("partialsLoaded", () => {
+	import("./importHTML.js");
 
-hamburger.addEventListener("click", () => {
-	navLinks.classList.toggle("active");
+	console.log("partialsLoaded");
 });

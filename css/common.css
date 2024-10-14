@@ -1,6 +1,8 @@
+/* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* General Styles */
 * {
 	margin: 0;
 	padding: 0;
@@ -31,12 +33,14 @@ a {
 body {
 	font-family: var(--primary-font);
 	background-color: var(--background-color-white);
+	color: var(--text-color);
 }
 
 .container {
 	max-width: 1200px;
-	margin: auto;
+	margin: auto 0;
 }
+
 img {
 	display: block;
 	width: 100%;

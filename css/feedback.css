@@ -1,0 +1,90 @@
+body {
+	background-color: var(--background-color-white);
+	color: var(--text-color);
+	font-family: var(--primary-font);
+}
+.carousel-section {
+	padding: 60px;
+	background-color: var(--background-color);
+}
+.carousel-item-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #ffffff;
+	border-radius: 15px;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	margin: 0 10px;
+	transition: transform 0.3s ease;
+	max-width: 300px;
+	height: 100%;
+}
+.carousel-item-content:hover {
+	transform: scale(1.05);
+}
+.carousel-item-content img {
+	width: 100%;
+	height: auto;
+	border-radius: 2%;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	object-fit: contain;
+	max-height: 200px;
+}
+.carousel-item-content p {
+	font-family: var(--secondary-font);
+	font-size: 1rem;
+	color: var(--text-color);
+	text-align: center;
+	margin-bottom: 15px;
+	flex-grow: 1;
+}
+.carousel-item-content .feedback-author {
+	font-weight: bold;
+}
+.carousel-inner {
+	display: flex;
+	gap: 20px;
+	flex-wrap: nowrap;
+}
+.carousel-control-prev,
+.carousel-control-next {
+	color: var(--primary-color);
+	background-color: var(--primary-color);
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+	filter: invert(1);
+}
+/* Адаптація під мобільні пристрої */
+@media (max-width: 768px) {
+	.carousel-item-content {
+		margin-bottom: 20px;
+		max-width: 100%;
+	}
+	.carousel-inner {
+		flex-wrap: wrap;
+	}
+	.carousel-item .d-flex {
+		flex-direction: column;
+		align-items: center;
+	}
+	.carousel-control-prev,
+	.carousel-control-next {
+		width: 40px;
+		height: 40px;
+	}
+	.carousel-item-content:not(:first-child) {
+		display: none;
+	}
+}
