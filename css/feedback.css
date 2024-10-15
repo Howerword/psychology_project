@@ -81,7 +81,8 @@ body {
 	}
 	.carousel-control-prev,
 	.carousel-control-next {
-		display: none;
+		width: 40px;
+		height: 40px;
 	}
 	.carousel-item-content:not(:first-child) {
 		display: none;
