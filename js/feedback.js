@@ -1,14 +1,16 @@
 const btnFeedback = document.getElementById("btn-feedback");
 
 btnFeedback.addEventListener("click", () => {
-	const feedbackFirst = document.getElementById("feedback-first");
 	const feedbackSecond = document.getElementById("feedback-second");
+	btnFeedback.style.color = "var(--color-white)";
 
-	if (feedbackSecond.style.display === "block") {
-		feedbackSecond.style.display = "none";
-		btnFeedback.innerHTML = "Більше...";
+	if (feedbackSecond.classList.contains("open")) {
+		// Згортаємо блок
+		feedbackSecond.classList.remove("open");
+		btnFeedback.innerHTML = "<p>Більше...</p>";
 	} else {
-		feedbackSecond.style.display = "block";
-		btnFeedback.innerHTML = "Менше...";
+		// Розгортаємо блок
+		feedbackSecond.classList.add("open");
+		btnFeedback.innerHTML = "<p>Менше...</p>";
 	}
 });

@@ -110,7 +110,7 @@ body {
 	margin: 40px auto 0;
 	line-height: 1.6;
 	font-family: var(--secondary-font);
-	background-color: var(--background-color-white);
+	background-color: var(--color-white);
 	padding: 20px;
 	border-radius: 10px;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -151,9 +151,17 @@ body {
 		margin-top: 10px;
 		display: block;
 		align-items: center;
+		color: var(--color-white);
+		background-color: var(--secondary-color);
 	}
 
-	.second {
-		display: none;
+	#feedback-second {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.5s ease, padding 0.5s ease-in-out;
+	}
+
+	#feedback-second.open {
+		max-height: 500px; /* Достатньо велике значення для всього контенту */
 	}
 }
