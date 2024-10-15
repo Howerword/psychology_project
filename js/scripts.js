@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("partialsLoaded", () => {
 	import("./importHTML.js");
+	import("./feedback.js");
 
 	console.log("partialsLoaded");
 });

@@ -13,14 +13,15 @@
 	/* Fonts */
 	--primary-font: "Nunito", sans-serif;
 	--secondary-font: "Raleway", sans-serif;
+
 	/* Colors */
-	--primary-color: #f77f00;
-	--secondary-color: #455a64;
-	--background-color: #f7e6cc;
-	--background-color-white: #fffbf0;
-	--items-color: #fe9c69;
-	--text-color: #455a64;
-	--secondary-text-color: #000;
+	--primary-color: #ff7b00; /* Оновлений основний колір: теплий оранжевий, трохи більш насичений */
+	--secondary-color: #5c6b73; /* Оновлений другорядний колір: менш контрастний, з теплим відтінком сіро-блакитного */
+	--background-color: #f9e8d1; /* Оновлений колір фону: пастельний кремовий, який створює теплий фон */
+	--background-color-white: #fffaf3; /* Оновлений білий фон: трохи м'якший відтінок білого, щоб зберегти теплоту */
+	--items-color: #ffa573; /* Оновлений колір предметів: більш приглушений оранжево-рожевий, щоб додати гармонію */
+	--text-color: #37474f; /* Оновлений текстовий колір: глибокий, але теплий сіро-синій */
+	--secondary-text-color: #111; /* Оновлений другорядний текстовий колір: темно-сірий для гарної читабельності */
 
 	/* Scroll */
 	scroll-behavior: smooth;
@@ -28,6 +29,10 @@
 
 a {
 	text-decoration: none;
+}
+
+p {
+	margin-bottom: 0;
 }
 
 body {
@@ -38,7 +43,6 @@ body {
 
 .container {
 	max-width: 1200px;
-	margin: auto 0;
 }
 
 img {
