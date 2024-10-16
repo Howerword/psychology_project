@@ -5,6 +5,8 @@
 	width: 100%;
 	z-index: 100;
 	background-color: transparent;
+	display: flex;
+	justify-content: end;
 }
 
 .header-conatainer {
@@ -14,6 +16,8 @@
 	justify-content: end;
 	align-items: center;
 	min-height: 4.375rem;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .header-logo {
@@ -30,6 +34,12 @@
 
 .menu-icon {
 	display: none;
+}
+
+.menu-list {
+	display: flex;
+	justify-content: space-between;
+	gap: 6rem;
 }
 
 .menu-list li {
@@ -92,12 +102,17 @@
 }
 
 @media (max-width: 992px) {
+	.header {
+		display: block;
+	}
+	/* Logo */
 	.header-logo {
 		display: block;
 		font-size: 1.5rem;
 	}
 
 	.header-conatainer {
+		display: flex;
 		justify-content: space-between;
 		padding: 0.625rem;
 	}
