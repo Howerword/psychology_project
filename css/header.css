@@ -1,177 +1,197 @@
-.navbar {
-	position: sticky;
+.header {
+	position: fixed;
 	top: 0;
+	left: 0;
+	width: 100%;
 	z-index: 100;
-	background-color: var(--secondary-color);
-	padding: 20px 0;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-	width: 100%;
-}
-.container-fluid {
-	max-width: 1200px;
-	margin: 0 auto;
-	color: var(--color-white);
-}
-
-.navbar-brand {
-	color: var(--color-white);
-	font-size: 1.8rem;
-	font-weight: 700;
-	text-decoration: none;
-	transition: color 0.3s ease;
-}
-
-.navbar-brand:hover {
-	color: var(--primary-color);
-}
-
-/* Посилання для навігації */
-.navbar-wrapper-links {
-	display: flex;
-	align-items: center;
-}
-
-.navbar-nav {
-	color: var(--color-white);
-	list-style: none;
-	display: flex;
-	align-items: center;
-	gap: 20px;
-}
-
-.navbar-nav li {
-	margin: 0;
-}
-
-.nav-item a {
-	position: relative;
-	color: var(--color-white);
-	font-size: 1rem;
-	font-weight: 500;
-	text-decoration: none;
-	padding: 10px 15px;
-	transition: color 0.3s ease;
-}
-
-.nav-item a::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 0;
-	height: 3px;
-	background-color: var(--primary-color);
-	transition: width 0.3s ease;
-}
-
-.nav-item a:hover {
-	color: var(--primary-color);
-}
-
-.nav-item a:hover::after {
-	width: 100%;
-}
-
-/* Кнопка */
-.btn-primary {
-	position: relative;
 	background-color: transparent;
-	border: 2px solid var(--color-white);
-	padding: 8px 20px;
-	border-radius: 50px;
+}
+
+.header-conatainer {
+	max-width: 1600px;
+	padding: 2rem;
+	display: flex;
+	justify-content: end;
+	align-items: center;
+	min-height: 4.375rem;
+}
+
+.header-logo {
+	display: none;
+	position: relative;
+	z-index: 5;
+	color: var(--second-text-color);
+}
+
+.menu-icon {
+	display: none;
+}
+
+.menu-list li {
+	position: relative;
+	margin-left: 1.25rem;
 	text-decoration: none;
-	font-weight: 500;
-	transition: background-color 0.3s ease, color 0.3s ease;
-	outline: none;
-	overflow: hidden;
-	z-index: 2;
 }
 
-.btn-primary p {
-	position: relative;
-	z-index: 2;
-	color: var(--color-white);
+.menu-link {
+	color: var(--second-text-color);
+	font-size: 1.125rem;
 }
 
-.btn-primary::after {
-	content: "";
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 0;
-	background-color: var(--primary-color);
-	transition: height 0.3s ease;
-	z-index: 1;
-}
-
-.btn-primary:hover {
-	color: var(--color-white);
-	background-color: var(--primary-color);
-	border: 2px solid var(--primary-color);
-	transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-primary:hover::after {
-	height: 100%;
-}
-
-.btn-primary span {
-	position: relative;
-	z-index: 2;
-}
-
-/* Адаптивність для мобільних пристроїв */
-@media (max-width: 768px) {
-	.navbar-wrapper {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-
-	.navbar-brand {
-		font-size: 1rem;
-	}
-
-	.navbar-links {
-		flex-direction: column;
-		display: none;
-		width: 100%;
-		position: absolute;
-		top: 60px;
-		left: 0;
-		background-color: var(--background-color);
-		padding: 10px;
-	}
-
-	.navbar-links.active {
-		display: flex;
-	}
-
-	.btn-primary {
-		width: 100%; /* Кнопка розтягнеться на весь навбар */
-		text-align: center;
-	}
-
-	.hamburger {
-		display: block;
-		cursor: pointer;
-	}
-
-	.hamburger span {
-		width: 25px;
-		height: 3px;
-		background-color: var(--text-color);
-		margin: 5px 0;
-		transition: 0.4s;
-	}
+.btn-primary {
+	display: none;
 }
 
 @media (min-width: 992px) {
-	.hamburger {
-		display: none;
+	.menu-list {
+		display: flex;
+		align-items: center;
 	}
 
-	.navbar-links {
+	.menu-list li {
+		padding: 0.625rem 0;
+	}
+}
+
+@media (max-width: 992px) {
+	.header-logo {
+		display: block;
+		font-size: 1.5rem;
+	}
+
+	.header-conatainer {
+		justify-content: space-between;
+		padding: 0.625rem;
+	}
+	/* Burger */
+	.menu-icon {
+		z-index: 5;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+	}
+
+	.menu-icon span,
+	.menu-icon::before,
+	.menu-icon::after {
+		left: 0;
+		position: absolute;
+		height: 10%;
+		width: 100%;
+		transition: all 0.3s ease 0s;
+		background-color: var(--second-text-color);
+	}
+
+	.menu-icon::before,
+	.menu-icon::after {
+		content: "";
+	}
+
+	.menu-icon::before {
+		top: 0;
+	}
+
+	.menu-icon::after {
+		bottom: 0;
+	}
+
+	.menu-icon span {
+		top: 50%;
+		transform: scale(1) translate(0, -50%);
+	}
+
+	.menu-icon.active span {
+		transform: scale(0) translate(0, -50%);
+	}
+
+	.menu-icon.active::before {
+		top: 50%;
+		transform: rotate(-45deg) translate(0, -50%);
+	}
+
+	.menu-icon.active::after {
+		bottom: 50%;
+		transform: rotate(45deg) translate(0, 50%);
+	}
+
+	/* Menu */
+	.menu-body {
+		position: fixed;
+		top: 0;
+		right: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		padding: 100px 30px 30px 30px;
+		transition: right 0.3s ease 0s;
+		overflow: auto;
+	}
+
+	.menu-body.active {
+		right: 0;
+	}
+
+	.menu-body:before {
+		content: "";
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 4.375rem;
+		background-color: transparent;
+		z-index: 2;
+	}
+
+	.menu-list li {
+		margin: 0 0 30px 0;
+	}
+
+	.menu-list li:last-child {
+		margin-bottom: 0;
+	}
+
+	.menu-link {
+		font-size: 1.5rem;
+	}
+
+	.menu-list {
 		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		gap: 3rem;
+	}
+
+	/* btn */
+	.btn-primary {
+		display: block;
+		margin: 0 auto;
+		font-size: 1.5rem;
+		color: var(--second-text-color);
+		background-color: transparent;
+		border: 2px solid var(--primary-color);
+		border-radius: 50px;
+		text-decoration: none;
+		font-weight: 500;
+		transition: background-color 0.3s ease, color 0.3s ease,
+			box-shadow 0.3s ease;
+		outline: none;
+		position: relative;
+		padding: 1rem 2rem;
+	}
+
+	.btn-primary:hover {
+		background-color: var(--primary-color);
+		color: var(--second-text-color);
+		box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь навколо кнопки */
+	}
+
+	.btn-primary:focus,
+	.btn-primary:focus-visible {
+		outline: none;
+		box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь при фокусі */
 	}
 }

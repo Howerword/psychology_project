@@ -1,0 +1,150 @@
+.main {
+	position: relative; /* Позиціонування для збереження порядку всередині блоку */
+	height: 100vh; /* Висота блоку дорівнює висоті вікна браузера */
+	background: url("/img/main-background.png") no-repeat center center;
+	background-size: cover; /* Фон розтягується на весь блок */
+	overflow: hidden;
+}
+
+.main-inner {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.main-img {
+	width: 40%;
+}
+
+.main-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--second-text-color);
+	width: 70%;
+	font-family: var(--primary-font);
+}
+
+.main-text-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-weight: 400;
+}
+
+.main-header {
+	padding-bottom: 25px;
+	font-size: 2rem;
+	font-weight: 400;
+	line-height: 39.68px;
+}
+
+.main-title {
+	padding-bottom: 20px;
+	font-size: 4rem;
+	font-weight: 400;
+	line-height: 79.36px;
+}
+
+.main-subtitle {
+	text-align: center;
+	font-size: 1rem;
+}
+
+.main-btn {
+	display: inline-block;
+	margin-top: 60px;
+	padding: 15px 40px;
+	font-size: 1.2rem;
+	color: var(--primary-color);
+	background-color: transparent;
+	border: 2px solid var(--primary-color);
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+	outline: none;
+	position: relative;
+}
+
+.main-btn:hover {
+	background-color: var(--primary-color);
+	color: var(--second-text-color);
+	box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь навколо кнопки */
+}
+
+.main-btn:focus,
+.main-btn:focus-visible {
+	outline: none;
+	box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь при фокусі */
+}
+
+@media (max-width: 992px) {
+	.main {
+		height: 100vh;
+		position: relative; /* Дозволяє накладання тексту поверх зображення */
+	}
+
+	.main-inner {
+		height: 100%;
+		position: relative;
+		display: flex;
+		align-items: flex-end;
+		justify-content: left;
+	}
+
+	.main-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+	}
+
+	.main-text {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		z-index: 2;
+		color: var(--color-white);
+		width: 100%;
+		background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+	}
+
+	.main-text-inner {
+		align-items: start;
+		background: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0.6),
+			rgba(0, 0, 0, 0)
+		);
+		padding: 20px;
+		color: var(--second-text-color);
+	}
+
+	.main-header {
+		display: none;
+	}
+
+	.main-title {
+		font-size: 2rem;
+		line-height: 1.2;
+		text-align: left;
+		padding-bottom: 10px;
+	}
+
+	.main-subtitle {
+		font-size: 0.9rem;
+		text-align: left;
+	}
+
+	.main-btn {
+		display: none; /* Приховуємо кнопку для мобільної версії */
+	}
+}

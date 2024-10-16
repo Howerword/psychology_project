@@ -1,6 +1,5 @@
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap");
 
 /* General Styles */
 * {
@@ -11,17 +10,15 @@
 
 :root {
 	/* Fonts */
-	--primary-font: "Nunito", sans-serif;
-	--secondary-font: "Raleway", sans-serif;
-
+	--primary-font: "Unbounded", sans-serif;
+	--secondary-font: "Reddit Sans", sans-serif;
 	/* Colors */
-	--primary-color: #ffa726; /* Світліший теплий помаранчевий */
-	--secondary-color: #78909c; /* Світліший сіро-блакитний */
-	--background-color: #fff3e0; /* Світлий кремовий фон */
-	--color-white: #ffffff; /* Чистий білий для свіжості */
-	--items-color: #ffd54f; /* Світлий жовтий для предметів */
-	--text-color: #37474f; /* Темно-сірий для тексту, але зі світлим відтінком */
-	--secondary-text-color: #212121; /* Дуже темний сірий для кращої читабельності */
+	--primary-color: #ff9d25;
+	--secondary-color: #efe8cd;
+	--background-color: #5b4827;
+	--third-color: #604b2c;
+	--first-text-color: #3a3225;
+	--second-text-color: #ffffff;
 	/* Scroll */
 	scroll-behavior: smooth;
 }
@@ -34,17 +31,88 @@ p {
 	margin-bottom: 0;
 }
 
+ul {
+	list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
 body {
 	font-family: var(--primary-font);
-	background-color: var(--background-color-white);
-	color: var(--text-color);
+	color: var(--first-text-color);
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1600px;
 }
 
 img {
 	display: block;
 	width: 100%;
 }
+
+/* Кнопка */
+/* .btn-primary {
+	display: block;
+	position: relative;
+	background-color: transparent;
+	color: var(--second-text-color);
+	border: 2px solid var(--second-text-color);
+	padding: 8px 20px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	outline: none;
+	overflow: hidden;
+	z-index: 2;
+}
+
+.btn-primary p {
+	position: relative;
+	z-index: 2;
+	color: var(--second-text-color);
+}
+
+.btn-primary::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: var(--primary-color);
+	transition: height 0.3s ease;
+	z-index: 1;
+}
+
+.btn-primary:hover {
+	color: var(--second-text-color);
+	background-color: var(--primary-color);
+	border: 2px solid var(--primary-color);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-primary:hover::after {
+	height: 100%;
+}
+
+.btn-primary span {
+	position: relative;
+	z-index: 2;
+} */
