@@ -21,6 +21,11 @@
 	position: relative;
 	z-index: 5;
 	color: var(--second-text-color);
+	transition: color 0.3s ease;
+}
+
+.header-logo:hover {
+	color: var(--primary-color);
 }
 
 .menu-icon {
@@ -33,9 +38,42 @@
 	text-decoration: none;
 }
 
+/* Навбар посилання з анімацією підкреслення */
 .menu-link {
+	position: relative;
 	color: var(--second-text-color);
 	font-size: 1.125rem;
+	text-decoration: none;
+	padding: 10px 15px;
+	transition: color 0.3s ease;
+}
+
+.menu-link::after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 3px;
+	background-color: var(--primary-color);
+	transition: width 0.3s ease;
+}
+
+.menu-link:hover {
+	color: var(--primary-color);
+}
+
+.menu-link:hover::after {
+	width: 100%;
+}
+
+/* Активний стан посилання */
+.menu-link.active {
+	color: var(--primary-color);
+}
+
+.menu-link.active::after {
+	width: 100%;
 }
 
 .btn-primary {
@@ -71,6 +109,14 @@
 		width: 30px;
 		height: 18px;
 		cursor: pointer;
+		margin: 1rem;
+		transition: all 0.3s ease 0s;
+	}
+
+	.menu-icon:hover span,
+	.menu-icon:hover::before,
+	.menu-icon:hover::after {
+		background-color: var(--primary-color);
 	}
 
 	.menu-icon span,
