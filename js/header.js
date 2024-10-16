@@ -1,10 +1,10 @@
-// Optional: Add scroll effect to change navbar background
+// Додаємо слухача подій на скрол сторінки
 window.addEventListener("scroll", () => {
-	const navbar = document.querySelector(".navbar");
+	const navbar = document.querySelector(".header");
 	if (window.scrollY > 50) {
-		navbar.classList.add("scrolled");
+		navbar.classList.add("scrolled"); // Додаємо клас при прокручуванні вниз
 	} else {
-		navbar.classList.remove("scrolled");
+		navbar.classList.remove("scrolled"); // Видаляємо клас, якщо сторінка повертається вверх
 	}
 });
 

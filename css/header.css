@@ -6,18 +6,23 @@
 	z-index: 100;
 	background-color: transparent;
 	display: flex;
-	justify-content: end;
+	justify-content: space-between;
+	align-items: center;
+	transition: background-color 0.3s ease;
 }
-
+.header.scrolled {
+	background-color: 0.7; /* Напівпрозорий світлий фон */
+	backdrop-filter: blur(10px); /* Додаємо розмиття */
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тінь */
+}
 .header-conatainer {
 	max-width: 1600px;
 	padding: 2rem;
 	display: flex;
-	justify-content: end;
+
 	align-items: center;
 	min-height: 4.375rem;
 	display: flex;
-	justify-content: flex-end;
 }
 
 .header-logo {
