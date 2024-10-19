@@ -23,8 +23,10 @@
 }
 .about-text-wrapper {
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
+	gap: 2rem;
+	flex-wrap: wrap;
+	justify-content: space-between;
 }
 .about-text {
 	display: flex;
@@ -50,4 +52,9 @@
 }
 .about-img {
 	width: 30rem;
+	background-color: var(--background-color);
+	border-radius: 50%;
+	width: 480px;
+	height: 480px;
+	object-fit: cover;
 }
