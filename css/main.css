@@ -60,34 +60,6 @@
 	font-size: 1rem;
 }
 
-.main-btn {
-	display: inline-block;
-	margin-top: 60px;
-	padding: 15px 40px;
-	font-size: 1.2rem;
-	color: var(--primary-color);
-	background-color: transparent;
-	border: 2px solid var(--primary-color);
-	border-radius: 50px;
-	text-decoration: none;
-	font-weight: 500;
-	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-	outline: none;
-	position: relative;
-}
-
-.main-btn:hover {
-	background-color: var(--primary-color);
-	color: var(--second-text-color);
-	box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь навколо кнопки */
-}
-
-.main-btn:focus,
-.main-btn:focus-visible {
-	outline: none;
-	box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь при фокусі */
-}
-
 @media (max-width: 992px) {
 	.main {
 		height: 100vh;
