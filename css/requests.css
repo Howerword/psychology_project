@@ -1,15 +1,129 @@
+/* Основні стилі */
 .request {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: url("/img/request-background.png") no-repeat center center;
+	background-size: cover;
+	background-attachment: fixed;
+	color: var(--second-text-color);
 }
-.requests-title {
-}
+
 .requests-text {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
 }
+
+.requests-title {
+	text-align: center;
+	text-shadow: 0px 4px 4px rgba(96, 75, 44, 0.8);
+	font-size: 3rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+.requests-list-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1.7rem;
+	margin-bottom: 2rem;
+}
+
 .requests-list {
+	text-align: left;
+	font-size: 40px;
 	text-decoration: dotted;
+	list-style: disc;
 }
+
 .requests-list-item {
+	margin: 0.74rem 0;
 }
-.requests-title-secondary {
+
+.requests-subtitle {
+	color: var(--primary-color);
+	text-align: center;
+	font-size: 2.25rem;
+	text-transform: uppercase;
 }
-.btn-primary {
+
+.requests-btn {
+	text-align: center;
+	width: 33%;
+}
+
+/* Адаптивний дизайн для екранів менше 992px (планшети) */
+@media (max-width: 992px) {
+	.requests-title {
+		font-size: 3rem; /* Зменшуємо розмір заголовка */
+	}
+
+	.requests-list {
+		font-size: 1.8rem; /* Зменшуємо розмір списку */
+	}
+
+	.requests-subtitle {
+		font-size: 1.75rem; /* Зменшуємо розмір підзаголовка */
+	}
+
+	.requests-btn {
+		width: 50%; /* Збільшуємо ширину кнопки */
+	}
+}
+
+/* Адаптивний дизайн для екранів менше 768px (мобільні пристрої) */
+@media (max-width: 768px) {
+	.request {
+		padding: 1.5rem 1rem; /* Додаємо більший відступ для зручності */
+		flex-direction: column; /* Вирівнюємо всі елементи в колонку */
+	}
+
+	.requests-title {
+		font-size: 2.2rem; /* Зменшуємо заголовок */
+	}
+
+	.requests-list {
+		font-size: 1.4rem; /* Зменшуємо розмір тексту у списку */
+	}
+
+	.requests-list-wrapper {
+		gap: 1rem; /* Зменшуємо відступи між елементами списку */
+	}
+
+	.requests-subtitle {
+		font-size: 1.5rem; /* Зменшуємо розмір підзаголовка */
+	}
+
+	.requests-btn {
+		width: 80%; /* Розтягуємо кнопку майже на всю ширину */
+	}
+}
+
+/* Адаптивний дизайн для екранів менше 576px (мобільні пристрої) */
+@media (max-width: 576px) {
+	.request {
+		padding: 1rem; /* Додаємо більше внутрішнього відступу */
+	}
+
+	.requests-title {
+		font-size: 1.8rem; /* Зменшуємо заголовок */
+	}
+
+	.requests-list {
+		font-size: 1.2rem; /* Зменшуємо розмір тексту у списку */
+	}
+
+	.requests-subtitle {
+		font-size: 1.25rem; /* Зменшуємо розмір підзаголовка */
+	}
+
+	.requests-btn {
+		width: 90%; /* Розтягуємо кнопку майже на всю ширину */
+	}
 }
