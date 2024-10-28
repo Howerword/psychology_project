@@ -3,9 +3,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
-	background: url("/img/request-background.png") no-repeat center center;
+	min-height: 100vh;
+	background-image: url("/img/request-background.png");
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 	background-attachment: fixed;
 	color: var(--second-text-color);
 }
@@ -22,7 +24,7 @@
 .requests-title {
 	text-align: center;
 	text-shadow: 0px 4px 4px rgba(96, 75, 44, 0.8);
-	font-size: 3rem;
+	font-size: 2rem;
 	font-weight: 500;
 	text-transform: uppercase;
 }
@@ -31,13 +33,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1.7rem;
+	gap: 1rem;
 	margin-bottom: 2rem;
 }
 
 .requests-list {
 	text-align: left;
-	font-size: 40px;
+	font-size: 1.7rem;
 	text-decoration: dotted;
 	list-style: disc;
 }
@@ -49,7 +51,7 @@
 .requests-subtitle {
 	color: var(--primary-color);
 	text-align: center;
-	font-size: 2.25rem;
+	font-size: 2rem;
 	text-transform: uppercase;
 }
 
