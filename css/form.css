@@ -1,4 +1,5 @@
 .form {
+	min-height: 100vh;
 	padding: 50px;
 	background: url("/img/bg_form.png") no-repeat center center fixed;
 	background-size: cover;
