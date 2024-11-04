@@ -68,84 +68,82 @@
 }
 
 /* Адаптивність для екранів до 992px */
-@media (max-width: 992px) {
+@media (max-width: 1068px) {
 	.about-tittle {
-		font-size: 48px; /* Зменшуємо розмір заголовка */
-		margin: 2rem;
+		font-size: 36px; /* Зменшуємо розмір заголовка */
+		margin-bottom: 2rem;
 	}
 
 	.about-text-wrapper {
-		flex-direction: column; /* Розташовуємо текст над зображенням */
+		flex-direction: column; /* Вирівнюємо всі елементи у вертикальну колонку */
+		align-items: center; /* Центруємо елементи */
+		gap: 2rem; /* Встановлюємо відступ між елементами */
+	}
+	.about-text:first-child {
+		border-radius: 3rem 3rem 3rem 0;
+	}
+	.about-text:last-child {
+		border-radius: 3rem 3rem 0 3rem;
 	}
 
 	.about-text {
-		width: 100%; /* Текст займає всю ширину */
-		padding: 1rem;
-		/* color: var(--second-text-color); */
+		width: 90%; /* Зменшуємо ширину тексту */
+		background-color: rgba(0, 0, 0, 0.5); /* Додаємо затемнений фон */
+		padding: 1.5rem;
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Додаємо тінь для блоку */
 	}
 
 	.about-img {
-		width: 380px; /* Зменшуємо розмір зображення */
-		height: 380px;
+		display: none;
 	}
 
-	.about-img::after {
-		content: "";
-		display: block;
-		width: 100%;
-		height: 2px; /* Висота лінії */
-		background-color: var(--primary-color); /* Колір лінії */
-		margin: 2rem 0; /* Відступи для лінії, щоб надати їй простору */
+	.about-text-inner {
+		list-style: none;
+		padding: 0;
+		margin: 0;
 	}
 
-	.about-text-wrapper {
-		flex-direction: column; /* Розташовуємо елементи вертикально */
+	.about-text-item {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-bottom: 1rem; /* Зменшуємо відступи між елементами списку */
+		color: var(--second-text-color); /* Колір тексту */
 	}
 
-	.about-text {
-		width: 100%; /* Займає всю ширину для мобільних пристроїв */
-	}
-
-	.about-text:nth-child(odd) {
-		order: 1; /* Текст залишається першим для непарних блоків */
-	}
-
-	.about-img:nth-child(even) {
-		order: 2; /* Картинка йде після тексту для непарних блоків */
-	}
-
-	.about-img:nth-child(odd) {
-		order: 4; /* Картинка йде після тексту для парних блоків */
-	}
-
-	.about-text:nth-child(even) {
-		order: 3; /* Текст йде перед картинкою для парних блоків */
+	.about-item-img {
+		width: 2rem;
+		height: 2rem;
 	}
 }
 
 /* Адаптивність для екранів до 768px */
 @media (max-width: 768px) {
 	.about-tittle {
-		font-size: 36px; /* Ще більше зменшуємо заголовок */
-		margin: 1.5rem;
+		font-size: 32px;
+		margin-bottom: 1.5rem;
 	}
 
 	.about-text-wrapper {
-		gap: 1.5rem; /* Зменшуємо проміжок між блоками */
+		gap: 1.5rem;
 	}
 
-	.about-text-item {
-		margin-bottom: 1.5rem; /* Зменшуємо відступи між елементами списку */
+	.about-text {
+		width: 100%;
+		padding: 1rem;
 	}
 
 	.about-img {
-		width: 300px; /* Зменшуємо розмір зображення для компактного розміщення */
-		height: 300px;
+		width: 280px;
+		height: 280px;
 	}
 
 	.about-item-img {
-		width: 2rem; /* Зменшуємо розмір іконок */
-		height: 2rem;
-		margin-right: 0.75rem;
+		width: 1.5rem; /* Ще більше зменшуємо іконки */
+		height: 1.5rem;
+	}
+
+	.about-text-item {
+		margin-bottom: 1rem; /* Зменшуємо відступи для ще більш компактного вигляду */
 	}
 }

@@ -11,22 +11,21 @@
 .form-wrapper {
 	width: 100%;
 	border-radius: 1.5rem;
-	border: 4px solid rgba(239, 232, 205, 0);
-	background: linear-gradient(
+	border: 4px solid var(--primary-color);
+	/* background: linear-gradient(
 		109deg,
 		rgba(239, 232, 205, 0.28) 0%,
 		rgba(239, 232, 205, 0) 100%
-	);
+	); */
 	backdrop-filter: blur(25px);
 	padding: 2rem 3rem;
 }
 
 .form-title {
-	color: #ff9d25;
+	color: var(--primary-color);
 	text-align: center;
 	font-size: 2rem;
 	margin-bottom: 2rem;
-	font-family: "Unbounded", sans-serif;
 }
 
 .form-forms {
@@ -51,7 +50,7 @@
 
 .form-field input,
 .form-field textarea {
-	min-width: 35rem;
+	min-width: 35rem; /* Збільшуємо ширину поля вводу */
 	padding: 10px;
 	border: none;
 	border-radius: 0.5rem;
@@ -62,4 +61,17 @@
 .form-btn {
 	width: 50%;
 	align-self: center;
+}
+
+@media (max-width: 992px) {
+	.form-field {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		gap: 0.5rem;
+	}
+	.form-field input,
+	.form-field textarea {
+		/* width: min(35rem, 100%); */
+	}
 }
