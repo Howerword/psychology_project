@@ -3,7 +3,6 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-
 	z-index: 100;
 	background-color: transparent;
 	display: flex;
@@ -12,18 +11,22 @@
 	transition: background-color 0.3s ease;
 }
 .header.scrolled {
-	background-color: 0.7; /* Напівпрозорий світлий фон */
 	backdrop-filter: blur(10px); /* Додаємо розмиття */
 	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тінь */
 }
-.header-conatainer {
+.header-container {
 	max-width: 1600px;
 	padding: 1rem;
 	display: flex;
-
+	justify-content: space-between;
 	align-items: center;
 	min-height: 2rem;
+}
+
+.header-menu {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .header-logo {
