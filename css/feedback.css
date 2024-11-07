@@ -1,76 +1,162 @@
+.feedback {
+	background: url("/img/bg_feedback.png") no-repeat center center;
+	background-size: cover;
+	padding: 2rem;
+}
 
-
-.feedback{
+.feedback-section {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	min-height: 100vh;
-	background: linear-gradient(
-		180deg,
-		#5a4727 0%,
-		rgba(239, 232, 205, 0) 50%,
-		#5a4727 100%
-	);
-	color: var(--second-text-color);
-}
-
-.card-list .card-item{
-	list-style: none;
-}
-
-.card-list .card-item .card-link {
-	width: 400px;
-	display: block;
-	padding: 18px;
-	background: #fff;
-	border-radius: 10px;
-	text-decoration: none;
-	border: 2px solid rgba(0, 0, 0, 0.1);
-	transition: 0.3s ease;
-	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.card-list .card-item .card-link:hover {
-	border: 2px solid var(--primary-color);
-}
-
-.card-list .card-link .card-img {
+	position: relative;
 	width: 100%;
-	object-fit: cover;
+	margin: 0 auto;
+	padding: 50px 0;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.feedback-wrapper {
+	display: flex;
+}
+
+.feedback-slide {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	text-align: center;
+	padding: 20px;
+	min-height: 35rem;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
+	background: var(--secondary-color);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-list .card-link .badge {
-	color: var(--primary-color);
-	background: var(--second-text-color);
-	padding: 8px 16px;
-	font-size: 1rem;
-	font-weight: 500;
-	margin: 16px 0 18px;
-	background: #dde4ff;
-	width: fit-content;
-	border-radius: 50px;
+.feedback-slide:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.card-list .card-link .card-title {
-	font-size: 1.2rem;
+.feedback-img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	transition: transform 0.3s ease;
+}
+
+.feedback-slide:hover .feedback-img {
+	transform: scale(1.05);
+}
+
+.feedback-title {
+	font-size: 1.5rem;
 	font-weight: 600;
-	color: var(--primary-text-color);
+	margin: 10px 0;
+	color: var(--first-text-color);
 }
 
-.card-list .card-link .card-button {
-	color: var(--primary-color);
-	height: 35px;
-	width: 35px;
-	border-radius: 50%;
-	background: none;
-	cursor: pointer;
-	border: 2px solid var(--primary-color);
-	transform: rotate(-45deg);
-	transition: all 0.3s ease;
-} 
+.feedback-description {
+	font-size: 1rem;
+	color: var(--first-text-color);
+}
 
-.card-list .card-link:hover .card-button {
-	color: #fff;
+.swiper-button-next,
+.swiper-button-prev {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	background: rgba(0, 0, 0, 0.5);
+	color: var(--second-text-color);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 10;
+	transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
 	background: var(--primary-color);
+}
+
+.swiper-button-next {
+	right: 10px;
+}
+
+.swiper-button-prev {
+	left: 10px;
+}
+
+.swiper-pagination {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+/* Стиль для точок пагінації */
+.swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background-color: var(--primary-color); /* Використовуємо основний колір */
+	opacity: 0.5;
+	border-radius: 50%;
+	margin: 0 4px;
+	transition: background-color 0.3s ease, transform 0.3s ease;
+	cursor: pointer;
+}
+
+/* Активна точка пагінації */
+.swiper-pagination-bullet-active {
+	background-color: var(
+		--third-color
+	); /* Змінюється на третинний колір при виборі */
+	opacity: 1;
+	transform: scale(1.2); /* Трохи збільшуємо розмір активної точки */
+}
+
+@media (max-width: 768px) {
+	.swiper-button-next,
+	.swiper-button-prev {
+		width: 36px;
+		height: 36px;
+	}
+	.feedback-slide {
+		padding: 10px;
+	}
+	.feedback-title {
+		font-size: 1.2rem;
+	}
+	.feedback-description {
+		font-size: 0.9rem;
+	}
+
+	.swiper-pagination-bullet {
+		width: 10px;
+		height: 10px;
+	}
+
+	.swiper-pagination {
+		bottom: 10px; /* Трохи піднімаємо пагінацію */
+	}
+}
+
+@media (max-width: 576px) {
+	.swiper-button-next,
+	.swiper-button-prev {
+		display: none;
+	}
+	.swiper-pagination-bullet {
+		width: 8px;
+		height: 8px;
+	}
 }
