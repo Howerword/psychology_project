@@ -166,6 +166,7 @@ img {
 	font-weight: 500;
 	color: var(--primary-color);
 	background-color: transparent;
+	backdrop-filter: blur(20px);
 	border: 2px solid var(--primary-color);
 	border-radius: 50px;
 	text-decoration: none;
