@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("partialsLoaded", () => {
 	import("./header.js");
 	import("./feedback.js");
+	import("./form.js");
 
 	console.log("partialsLoaded");
 });

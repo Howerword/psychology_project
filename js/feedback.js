@@ -1,16 +1,26 @@
-const btnFeedback = document.getElementById("btn-feedback");
 
-btnFeedback.addEventListener("click", () => {
-	const feedbackSecond = document.getElementById("feedback-second");
-	btnFeedback.style.color = "var(--color-white)";
-
-	if (feedbackSecond.classList.contains("open")) {
-		// Згортаємо блок
-		feedbackSecond.classList.remove("open");
-		btnFeedback.innerHTML = "<p>Більше...</p>";
-	} else {
-		// Розгортаємо блок
-		feedbackSecond.classList.add("open");
-		btnFeedback.innerHTML = "<p>Менше...</p>";
-	}
+document.addEventListener("DOMContentLoaded", function () {
+  const swiper = new Swiper('.feedback', {
+	loop: true,
+	spaceBetween: 30,
+	pagination: {
+	  el: '.swiper-pagination',
+	  clickable: true,
+	},
+	navigation: {
+	  nextEl: '.swiper-button-next',
+	  prevEl: '.swiper-button-prev',
+	},
+	breakpoints: {
+	  0: {
+		slidesPerView: 1,
+	  },
+	  768: {
+		slidesPerView: 2,
+	  },
+	  1024: {
+		slidesPerView: 3,
+	  },
+	},
+  });
 });
