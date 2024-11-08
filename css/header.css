@@ -109,7 +109,6 @@
 		padding: 0.625rem 0;
 	}
 	.header.scrolled {
-		background-color: 0.7; /* Напівпрозорий світлий фон */
 		backdrop-filter: blur(10px); /* Додаємо розмиття */
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тінь */
 	}
@@ -126,6 +125,7 @@
 	}
 
 	.header-conatainer {
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		padding: 0.625rem;
