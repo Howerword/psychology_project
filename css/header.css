@@ -11,8 +11,9 @@
 	transition: background-color 0.3s ease;
 }
 .header.scrolled {
-	backdrop-filter: blur(10px); /* Додаємо розмиття */
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тінь */
+	backdrop-filter: blur(10px);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.3);
 }
 .header-container {
 	max-width: 1600px;
