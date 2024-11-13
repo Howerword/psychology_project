@@ -21,18 +21,6 @@
 	--second-text-color: #ffffff;
 	/* Scroll */
 	scroll-behavior: smooth;
-
-	--background-dark: #121212;
-	--background-header-footer: #1e1e1e;
-	--text-light: #e0e0e0;
-	--link-color: #bb86fc;
-	--button-bg: #333;
-	--button-border: #444;
-	--input-bg: #2a2a2a;
-	--navbar-bg: #1f1f1f;
-	--section-bg: #181818;
-	--form-bg: #202020;
-	--navbar-border-bottom: #333;
 }
 
 a {
