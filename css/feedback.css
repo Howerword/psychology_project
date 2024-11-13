@@ -38,7 +38,7 @@
 	justify-content: center;
 	text-align: center;
 	padding: 20px;
-	min-height: 30rem;
+	min-height: 34rem;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 	background: var(--secondary-color);
@@ -157,6 +157,7 @@
 	}
 	.feedback-slide {
 		padding: 10px;
+		min-height: min-content;
 	}
 	.feedback-title {
 		font-size: 2rem;

@@ -41,26 +41,33 @@
 }
 
 .about-text-inner {
-	list-style: none; /* Видаляємо стандартні маркери списку */
-	padding: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: var(--second-text-color);
+	background-color: rgba(91, 72, 39, 0.5);
+	border-radius: 1rem;
+	padding: 1rem;
+	list-style: none;
 	margin: 0;
 }
 
 .about-text-item {
 	display: flex;
-	align-items: center; /* Центруємо іконку та текст по вертикалі */
+	align-items: center;
 	margin-bottom: 2rem;
 }
 
 .about-item-img {
-	width: 2.5rem; /* Ширина іконки */
-	height: 2.5rem; /* Висота іконки */
+	filter: invert(1);
+	width: 2.5rem;
+	height: 2.5rem;
 	margin-right: 1rem;
 }
 
 .about-img {
 	width: 30rem;
-	background-color: var(--background-color);
+	background-color: rgba(91, 72, 39, 0.5);
 	border-radius: 50%;
 	width: 480px;
 	height: 480px;
@@ -70,14 +77,14 @@
 /* Адаптивність для екранів до 992px */
 @media (max-width: 1068px) {
 	.about-tittle {
-		font-size: 36px; /* Зменшуємо розмір заголовка */
+		font-size: 36px;
 		margin-bottom: 2rem;
 	}
 
 	.about-text-wrapper {
-		flex-direction: column; /* Вирівнюємо всі елементи у вертикальну колонку */
-		align-items: center; /* Центруємо елементи */
-		gap: 2rem; /* Встановлюємо відступ між елементами */
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
 	}
 	.about-text:first-child {
 		border-radius: 3rem 3rem 3rem 0;
@@ -87,10 +94,10 @@
 	}
 
 	.about-text {
-		width: 90%; /* Зменшуємо ширину тексту */
-		background-color: rgba(0, 0, 0, 0.5); /* Додаємо затемнений фон */
+		width: 90%;
+		background-color: rgba(91, 72, 39, 0.7);
 		padding: 1.5rem;
-		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Додаємо тінь для блоку */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	}
 
 	.about-img {
@@ -98,6 +105,7 @@
 	}
 
 	.about-text-inner {
+		background-color: rgba(0, 0, 0, 0);
 		list-style: none;
 		padding: 0;
 		margin: 0;
@@ -107,8 +115,8 @@
 		display: flex;
 		align-items: center;
 		gap: 1rem;
-		margin-bottom: 1rem; /* Зменшуємо відступи між елементами списку */
-		color: var(--second-text-color); /* Колір тексту */
+		margin-bottom: 1rem;
+		color: var(--second-text-color);
 	}
 
 	.about-item-img {
@@ -139,11 +147,11 @@
 	}
 
 	.about-item-img {
-		width: 1.5rem; /* Ще більше зменшуємо іконки */
+		width: 1.5rem;
 		height: 1.5rem;
 	}
 
 	.about-text-item {
-		margin-bottom: 1rem; /* Зменшуємо відступи для ще більш компактного вигляду */
+		margin-bottom: 1rem;
 	}
 }
