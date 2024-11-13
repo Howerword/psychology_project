@@ -25,7 +25,7 @@
 }
 
 .form-title {
-	color: #ff9d25;
+	color: var(--primary-color);
 	text-align: center;
 	font-size: 2rem;
 	margin-bottom: 2rem;
