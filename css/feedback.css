@@ -12,15 +12,14 @@
 	min-height: 100vh;
 	position: relative;
 	width: 100%;
+	margin: 0 auto;
+	padding: 50px 0;
 	box-sizing: border-box;
 	overflow: hidden;
 }
 
 .feedback-wrapper {
 	display: flex;
-	justify-content: center;
-	margin: 0 60px 35px;
-	padding: 20px 10px;
 }
 
 .feedback-slide {
@@ -82,19 +81,19 @@
 	cursor: pointer;
 	z-index: 10;
 	transition: background 0.3s ease, transform 0.3s ease;
-	color: var(--primary-color);
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
+	background: var(--primary-color);
 }
 
 .swiper-button-next {
-	right: -20px;
+	right: 10px;
 }
 
 .swiper-button-prev {
-	left: -20px;
+	left: 10px;
 }
 
 .swiper-pagination {
