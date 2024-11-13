@@ -13,12 +13,14 @@
 	position: relative;
 	width: 100%;
 	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .feedback-wrapper {
+	display: flex;
+	justify-content: center;
 	margin: 0 60px 35px;
 	padding: 20px 10px;
-	overflow: hidden;
 }
 
 .feedback-slide {
@@ -66,6 +68,20 @@
 
 .swiper-button-next,
 .swiper-button-prev {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 44px;
+	height: 44px;
+	background: rgba(0, 0, 0, 0.5);
+	color: var(--second-text-color);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 10;
+	transition: background 0.3s ease, transform 0.3s ease;
 	color: var(--primary-color);
 }
 
