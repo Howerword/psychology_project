@@ -1,7 +1,7 @@
 .form {
 	min-height: 100vh;
 	padding: 50px;
-	background: url("/img/bg_form.png") no-repeat center center scroll;
+	background: url("/img/bg_form.webp") no-repeat center center scroll;
 	background-size: cover;
 	display: flex;
 	justify-content: center;

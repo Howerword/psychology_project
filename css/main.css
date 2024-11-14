@@ -1,7 +1,7 @@
 .main {
 	position: relative; /* Позиціонування для збереження порядку всередині блоку */
 	height: 100vh; /* Висота блоку дорівнює висоті вікна браузера */
-	background: url("/img/main-background.png") no-repeat center center;
+	background: url("/img/main-background.webp") no-repeat center center;
 	background-size: cover; /* Фон розтягується на весь блок */
 	overflow: hidden;
 }
