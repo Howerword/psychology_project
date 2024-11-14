@@ -1,8 +1,8 @@
 .main {
-	position: relative; /* Позиціонування для збереження порядку всередині блоку */
-	height: 100vh; /* Висота блоку дорівнює висоті вікна браузера */
+	position: relative;
+	height: 100vh;
 	background: url("/img/main-background.webp") no-repeat center center;
-	background-size: cover; /* Фон розтягується на весь блок */
+	background-size: cover;
 	overflow: hidden;
 }
 
@@ -14,8 +14,6 @@
 }
 
 .main-img {
-	transform: scaleX(-1);
-
 	height: 100vh;
 	object-fit: cover;
 }
@@ -63,7 +61,7 @@
 @media (max-width: 992px) {
 	.main {
 		height: 100vh;
-		position: relative; /* Дозволяє накладання тексту поверх зображення */
+		position: relative;
 	}
 
 	.main-inner {
@@ -123,6 +121,6 @@
 	}
 
 	.main-btn {
-		display: none; /* Приховуємо кнопку для мобільної версії */
+		display: none;
 	}
 }
