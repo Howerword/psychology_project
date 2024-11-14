@@ -16,6 +16,11 @@ document.addEventListener("partialsLoaded", async () => {
 		const formModule = await import("./form.js");
 		console.log("form.js завантажено успішно");
 
+		// Завантаження carousel.js
+		console.log("Завантаження carousel.js...");
+		const carouselModule = await import("./carousel.js");
+		console.log("carousel.js завантажено успішно");
+
 		console.log("partialsLoaded — всі файли завантажені успішно.");
 	} catch (error) {
 		console.error("Помилка при завантаженні модуля:", error);
