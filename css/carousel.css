@@ -1,204 +1,143 @@
-.carousel-section {
-	position: relative;
-	height: 100vh;
-	display: grid;
-	place-items: center;
-	overflow: hidden;
-	z-index: 1;
+.card-container {
+    perspective: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    min-height: 100vh;
+    background: url("/img/carousel-bg.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.carousel .slider {
-	position: relative;
-	z-index: 1;
-	width: 100%;
-	height: 100%;
-	box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-}
-.carousel .item {
-	width: 200px;
-	height: 300px;
-	list-style-type: none;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	z-index: 3;
-	background-position: center;
-	background-size: cover;
-	border-radius: 20px;
-	box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
-	transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
-
-	&:nth-child(1),
-	&:nth-child(2) {
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		transform: none;
-		border-radius: 0;
-		box-shadow: none;
-		opacity: 1;
-	}
-
-	&:nth-child(3) {
-		left: 50%;
-	}
-	&:nth-child(4) {
-		left: calc(50% + 220px);
-	}
-	&:nth-child(5) {
-		left: calc(50% + 440px);
-	}
-	&:nth-child(6) {
-		left: calc(50% + 660px);
-		opacity: 0;
-	}
+.card-wrapper {
+    width: 45%;
+    margin: 15px 2.5%;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
-.carousel .item::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.2);
-	z-index: 2;
-	border-radius: 20px;
+.card {
+    width: 100%;
+    max-width: 600px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
 }
+
+.card-wrapper:hover .card {
+    transform: rotateY(180deg);
+}
+
+.card.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: var(--second-text-color);
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-background-1 {
+    background: url('/img/carousel_1.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-background-2 {
+    background: url('/img/carousel_2.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-background-3 {
+    background: url('/img/carousel_3.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-background-4 {
+    background: url('/img/carousel_4.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .content {
-	width: min(30vw, 400px);
-	position: absolute;
-	z-index: 4;
-	top: 50%;
-	left: 3rem;
-	transform: translateY(-50%);
-	font: 400 0.85rem helvetica, sans-serif;
-	color: white;
-	text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-	opacity: 0;
-	display: none;
-
-	& .title {
-		font-family: var(--primary-font);
-		font-size: 2.5rem;
-		text-transform: uppercase;
-	}
-
-	& .description {
-		font-family: var(--primary-font);
-		line-height: 1.7;
-		margin: 1rem 0 1.5rem;
-		font-size: 1.2rem;
-	}
-
-	& .description-item {
-		font-family: var(--primary-font);
-		line-height: 1.7;
-		margin: 1rem 0 1.5rem;
-		font-size: 1rem;
-	}
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: left;
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
 }
 
-.item:nth-of-type(2) .content {
-	display: block;
-	animation: show 0.75s ease-in-out 0.3s forwards;
+.description-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 10px;
+    color: #ffffff;
 }
 
-@keyframes show {
-	0% {
-		filter: blur(5px);
-		transform: translateY(calc(-50% + 75px));
-	}
-	100% {
-		opacity: 1;
-		filter: blur(0);
-	}
+.description-item {
+    margin-bottom: 5px;
+    font-weight: normal;
 }
 
-.nav {
-	position: absolute;
-	bottom: 2rem;
-	left: 50%;
-	transform: translateX(-50%);
-	z-index: 5;
-	user-select: none;
-
-	& .btn {
-		background-color: rgba(255, 255, 255, 0.5);
-		color: rgba(0, 0, 0, 0.7);
-		border: 2px solid rgba(0, 0, 0, 0.6);
-		margin: 0 0.25rem;
-		padding: 0.75rem;
-		border-radius: 50%;
-		cursor: pointer;
-
-		&:hover {
-			background-color: rgba(255, 255, 255, 0.3);
-		}
-	}
+.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--second-text-color);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.8);
 }
 
-@media (width > 650px) and (width < 900px) {
-	.content {
-		& .title {
-			font-size: 1.2rem;
-		}
-		& .description {
-			font-size: 0.85rem;
-		}
-		.description-item {
-			font-size: 0.8rem;
-		}
-	}
-	.carousel .item {
-		width: 160px;
-		height: 270px;
-
-		&:nth-child(3) {
-			left: 50%;
-		}
-		&:nth-child(4) {
-			left: calc(50% + 170px);
-		}
-		&:nth-child(5) {
-			left: calc(50% + 340px);
-		}
-		&:nth-child(6) {
-			left: calc(50% + 510px);
-			opacity: 0;
-		}
-	}
+.card-back {
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
 }
 
-@media (width < 650px) {
-	.content {
-		& .title {
-			font-size: 1rem;
-		}
-		& .description {
-			font-size: 0.7rem;
-		}
-		.description-item {
-			font-size: 0.6rem;
-		}
-	}
-	.carousel .item {
-		width: 130px;
-		height: 220px;
+@media (max-width: 768px) {
+    .card-wrapper {
+        width: 100%;
+        margin: 15px 0;
+    }
 
-		&:nth-child(3) {
-			left: 50%;
-		}
-		&:nth-child(4) {
-			left: calc(50% + 140px);
-		}
-		&:nth-child(5) {
-			left: calc(50% + 280px);
-		}
-		&:nth-child(6) {
-			left: calc(50% + 420px);
-			opacity: 0;
-		}
-	}
+    .card {
+        max-width: 100%;
+        height: 250px;
+    }
+
+    .card-side {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .content {
+        font-size: 0.75rem;
+    }
 }
