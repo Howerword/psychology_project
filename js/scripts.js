@@ -21,6 +21,11 @@ document.addEventListener("partialsLoaded", async () => {
 		const carouselModule = await import("./carousel.js");
 		console.log("carousel.js завантажено успішно");
 
+		// Завантаження footer.js
+		console.log("Завантаження footer.js...");
+		const footerModule = await import("./footer.js");
+		console.log("footer.js завантажено успішно");
+
 		console.log("partialsLoaded — всі файли завантажені успішно.");
 	} catch (error) {
 		console.error("Помилка при завантаженні модуля:", error);
