@@ -1,17 +1,23 @@
+/* Form Section Base Styles */
 .form {
 	min-height: 100vh;
-	padding: 50px;
 	background: url("/img/bg_form.webp") no-repeat center center fixed;
 	background-size: cover;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 }
 
+/* Container styles already defined in common.css:
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+    width: 100%;
+} */
+
 .form-wrapper {
-	width: 100%;
-	max-width: 1000px;
-	min-width: 1000px; /* Початкова ширина для великих екранів */
+	width: min(100%, 1000px);
+	margin: clamp(2rem, 5vw, 4rem) auto;
 	border-radius: 1.5rem;
 	border: 4px solid rgba(239, 232, 205, 0);
 	background: linear-gradient(
@@ -20,76 +26,118 @@
 		rgba(239, 232, 205, 0) 100%
 	);
 	backdrop-filter: blur(25px);
-	padding: 2rem 3rem;
-	box-sizing: border-box;
+	-webkit-backdrop-filter: blur(25px);
+	padding: clamp(1.5rem, 4vw, 3rem);
+	box-shadow: var(--shadow-md);
+	transition: transform var(--transition-medium),
+		box-shadow var(--transition-medium);
 }
 
+/* Rest of the styles remain the same */
 .form-title {
-	color: #ff9d25;
+	color: var(--primary-color);
 	text-align: center;
-	font-size: 2rem;
-	margin-bottom: 2rem;
-	font-family: "Unbounded", sans-serif;
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	margin-bottom: clamp(1.5rem, 4vw, 2rem);
+	font-family: var(--primary-font);
+	line-height: 1.2;
 }
 
 .form-forms {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: clamp(1rem, 2vw, 1.25rem);
 }
 
 .form-field {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
-	gap: 1rem;
+	gap: 0.5rem;
 	width: 100%;
 }
 
 .form-field label {
 	font-family: var(--primary-font);
 	color: var(--second-text-color);
-	font-size: 1.2rem;
-	margin-bottom: 0.5rem;
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+	font-weight: 500;
 }
 
 .form-field input,
 .form-field textarea {
 	width: 100%;
-	padding: 10px;
-	border: none;
+	padding: clamp(0.75rem, 2vw, 1rem);
+	border: 2px solid transparent;
 	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.9);
+	color: var(--first-text-color);
+	font-family: var(--primary-font);
+	font-size: 1rem;
+	line-height: 1.5;
+	transition: all var(--transition-medium);
+}
+
+.form-field input:hover,
+.form-field textarea:hover {
+	background-color: rgba(255, 255, 255, 1);
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
 	outline: none;
-	resize: none;
-	box-sizing: border-box;
+	border-color: var(--primary-color);
+	background-color: white;
+	box-shadow: 0 0 0 4px rgba(255, 157, 37, 0.2);
+}
+
+.form-field textarea {
+	min-height: 120px;
+	resize: vertical;
 }
 
 .form-btn {
-	width: 100%;
-	max-width: 300px;
+	width: min(100%, 300px);
 	align-self: center;
+	margin-top: clamp(1.5rem, 4vw, 2rem);
 }
 
-/* Адаптивність для великих, середніх та малих екранів */
-@media (max-width: 1200px) {
-	.form-wrapper {
-		max-width: 800px;
-		min-width: auto;
-	}
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
-@media (max-width: 992px) {
-	.form-wrapper {
-		max-width: 600px;
-		min-width: auto;
-		padding: 2rem;
-	}
-}
-
+/* Mobile Optimizations */
 @media (max-width: 768px) {
+	.form {
+		background-attachment: scroll;
+	}
+
 	.form-wrapper {
-		max-width: 100%;
-		min-width: auto;
-		padding: 1.5rem;
+		border-radius: 1rem;
+		padding: 1.25rem;
+	}
+
+	.form-btn {
+		width: 100%;
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	.form-wrapper,
+	.form-field input,
+	.form-field textarea {
+		transition: none;
+	}
+
+	.form-wrapper:focus-within {
+		transform: none;
 	}
 }

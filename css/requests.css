@@ -1,4 +1,4 @@
-/* Основні стилі */
+/* Request Section Styles */
 .request {
 	display: flex;
 	justify-content: center;
@@ -10,123 +10,96 @@
 	background-position: center;
 	background-attachment: fixed;
 	color: var(--second-text-color);
+	padding: clamp(20px, 5vw, 40px);
 }
 
 .requests-text {
 	display: flex;
 	flex-direction: column;
-	text-align: center;
-	justify-content: center;
 	align-items: center;
-	gap: 1rem;
-	padding: 0 2rem;
+	gap: clamp(1rem, 2vw, 2rem);
+	max-width: 1400px;
+	margin: 0 auto;
+	width: 100%;
 }
 
 .requests-title {
-	text-align: center;
-	text-shadow: 0px 4px 4px rgba(96, 75, 44, 0.8);
-	font-size: 2rem;
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
 	font-weight: 500;
 	text-transform: uppercase;
+	text-align: center;
+	text-shadow: var(--shadow-md);
+	line-height: 1.2;
 }
 
 .requests-list-wrapper {
 	display: flex;
 	justify-content: center;
-	align-items: center;
-	gap: 1rem;
-	margin-bottom: 2rem;
+	align-items: flex-start;
+	gap: clamp(1rem, 2vw, 2rem);
+	margin-block: clamp(1rem, 3vw, 2rem);
+	width: 100%;
 }
 
 .requests-list {
 	text-align: left;
-	font-size: 1.7rem;
-	text-decoration: dotted;
+	font-size: clamp(1.2rem, 2.5vw, 1.7rem);
 	list-style: disc;
+	padding-left: 1.5em;
 }
 
 .requests-list-item {
-	margin: 0.74rem 0;
+	margin-block: 0.75rem;
+	line-height: 1.5;
+	transition: transform var(--transition-medium);
+}
+
+.requests-list-item:hover {
+	transform: translateX(5px);
 }
 
 .requests-subtitle {
 	color: var(--primary-color);
-	text-align: center;
-	font-size: 2rem;
+	font-size: clamp(1.25rem, 3vw, 2rem);
 	text-transform: uppercase;
+	text-align: center;
+	transition: color var(--transition-medium);
+}
+
+.requests-subtitle:hover {
+	color: var(--primary-color-light);
 }
 
 .requests-btn {
-	text-align: center;
-	width: 33%;
+	width: min(90%, 400px);
+	margin-inline: auto;
 }
 
-/* Адаптивний дизайн для екранів менше 992px (планшети) */
-@media (max-width: 992px) {
-	.requests-title {
-		font-size: 3rem; /* Зменшуємо розмір заголовка */
-	}
-
-	.requests-list {
-		font-size: 1.8rem; /* Зменшуємо розмір списку */
-	}
-
-	.requests-subtitle {
-		font-size: 1.75rem; /* Зменшуємо розмір підзаголовка */
-	}
-
-	.requests-btn {
-		width: 50%; /* Збільшуємо ширину кнопки */
-	}
-}
-
-/* Адаптивний дизайн для екранів менше 768px (мобільні пристрої) */
+/* Enhanced mobile experience */
 @media (max-width: 768px) {
 	.request {
-		padding: 1.5rem 1rem; /* Додаємо більший відступ для зручності */
-		flex-direction: column; /* Вирівнюємо всі елементи в колонку */
+		min-height: unset;
+		background-attachment: scroll;
 	}
 
-	.requests-title {
-		font-size: 2.2rem; /* Зменшуємо заголовок */
-	}
-
-	.requests-list {
-		font-size: 1.4rem; /* Зменшуємо розмір тексту у списку */
+	.requests-text {
+		gap: 1rem;
 	}
 
 	.requests-list-wrapper {
-		gap: 1rem; /* Зменшуємо відступи між елементами списку */
-	}
-
-	.requests-subtitle {
-		font-size: 1.5rem; /* Зменшуємо розмір підзаголовка */
-	}
-
-	.requests-btn {
-		width: 80%; /* Розтягуємо кнопку майже на всю ширину */
-	}
-}
-
-/* Адаптивний дизайн для екранів менше 576px (мобільні пристрої) */
-@media (max-width: 576px) {
-	.request {
-		padding: 1rem; /* Додаємо більше внутрішнього відступу */
-	}
-
-	.requests-title {
-		font-size: 1.8rem; /* Зменшуємо заголовок */
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.requests-list {
-		font-size: 1.2rem; /* Зменшуємо розмір тексту у списку */
+		width: 100%;
+		max-width: 600px;
 	}
+}
 
-	.requests-subtitle {
-		font-size: 1.25rem; /* Зменшуємо розмір підзаголовка */
-	}
-
-	.requests-btn {
-		width: 90%; /* Розтягуємо кнопку майже на всю ширину */
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+	.requests-list-item {
+		transition: none;
 	}
 }

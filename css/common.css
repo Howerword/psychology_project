@@ -1,13 +1,7 @@
 /* Import Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Reddit+Sans:ital,wght@0,200..900;1,200..900&family=Unbounded:wght@200..900&display=swap");
 
-/* General Styles */
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
+/* Custom Properties */
 :root {
 	/* Fonts */
 	--primary-font: "Unbounded", sans-serif;
@@ -18,111 +12,65 @@
 	--third-color: #604b2c;
 	--first-text-color: #3a3225;
 	--second-text-color: #ffffff;
+	/* New color variations */
+	--primary-color-light: #ffb25e;
+	--primary-color-dark: #e88b15;
+	/* Transitions */
+	--transition-fast: 0.2s ease;
+	--transition-medium: 0.3s ease;
+	--transition-slow: 0.5s ease;
+	/* Shadows */
+	--shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 	/* Scroll */
 	scroll-behavior: smooth;
 }
 
-a {
-	text-decoration: none;
-}
-
-p {
-	margin-bottom: 0;
-}
-
-ul {
-	list-style: none;
-}
-/* Reset Styles */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+/* Reset Styles with modern defaults */
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Modern CSS Reset */
+html {
+	scroll-behavior: smooth;
+	text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	font-family: var(--primary-font);
+	color: var(--first-text-color);
+	line-height: 1.5;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #ffffff;
+}
+
+body.lock {
+	overflow: hidden;
+}
+
+/* Modern link styles */
+a {
+	text-decoration: none;
+	color: inherit;
+	transition: color var(--transition-medium);
+}
+
+a:hover {
+	color: var(--primary-color);
+}
+
+/* Typography improvements */
 h1,
 h2,
 h3,
@@ -130,35 +78,45 @@ h4,
 h5,
 h6 {
 	margin-bottom: 0;
+	line-height: 1.2;
+	font-weight: 500;
 }
 
-html {
-	scroll-behavior: smooth;
+p {
+	margin-bottom: 0;
+	line-height: 1.6;
 }
 
-body.lock {
-	overflow: hidden;
+/* List styles */
+ul,
+ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
 }
 
-body {
-	font-family: var(--primary-font);
-	color: var(--first-text-color);
-}
-
+/* Container with responsive padding */
 .container {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0 20px;
-}
-
-img {
-	display: block;
+	padding: 0 clamp(20px, 5vw, 40px);
 	width: 100%;
 }
 
-/* Кнопка */
+/* Modern image handling */
+img {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	max-width: 100%;
+}
+
+/* Enhanced button styles */
 .btn {
-	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	margin-top: 60px;
 	padding: 15px 40px;
 	font-size: 1.2rem;
@@ -166,22 +124,91 @@ img {
 	color: var(--primary-color);
 	background-color: transparent;
 	backdrop-filter: blur(20px);
+	-webkit-backdrop-filter: blur(20px);
 	border: 2px solid var(--primary-color);
 	border-radius: 50px;
 	text-decoration: none;
-	transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+	transition: all var(--transition-medium);
 	outline: none;
 	position: relative;
+	cursor: pointer;
+	overflow: hidden;
+	user-select: none;
+}
+
+.btn::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 120%;
+	height: 120%;
+	background: var(--primary-color);
+	transform: translate(-50%, -50%) scale(0);
+	border-radius: inherit;
+	z-index: -1;
+	transition: transform var(--transition-medium);
 }
 
 .btn:hover {
-	background-color: var(--primary-color);
+	background-color: transparent;
 	color: var(--second-text-color);
+	box-shadow: 0 5px 25px rgba(255, 157, 37, 0.4);
+	transform: translateY(-2px);
+}
+
+.btn:hover::before {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.btn:active {
+	transform: translateY(0);
+}
+
+.btn:focus-visible {
+	outline: 3px solid var(--primary-color-light);
+	outline-offset: 2px;
 	box-shadow: 0 0 20px rgba(255, 167, 38, 0.6);
 }
 
-.main-btn:focus,
-.main-btn:focus-visible {
-	outline: none;
-	box-shadow: 0 0 20px rgba(255, 167, 38, 0.6); /* Тінь при фокусі */
+/* Utility classes */
+.text-gradient {
+	background: linear-gradient(
+		135deg,
+		var(--primary-color),
+		var(--primary-color-light)
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+}
+
+.blur-backdrop {
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+}
+
+/* Media Query for better mobile experience */
+@media (max-width: 768px) {
+	:root {
+		--transition-medium: 0.2s ease;
+	}
+
+	.btn {
+		padding: 12px 30px;
+		font-size: 1rem;
+		margin-top: 40px;
+	}
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
