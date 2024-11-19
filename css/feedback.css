@@ -1,7 +1,9 @@
+/* Feedback Section Base Styles */
 .feedback {
 	background: url("/img/bg_feedback.png") no-repeat center center;
 	background-size: cover;
-	padding: 2rem;
+	padding: clamp(2rem, 5vw, 4rem);
+	color: var(--first-text-color);
 }
 
 .feedback-section {
@@ -12,23 +14,26 @@
 	min-height: 100vh;
 	position: relative;
 	width: 100%;
+	max-width: 1400px;
 	margin: 0 auto;
-	padding: 50px 0;
-	box-sizing: border-box;
+	padding: clamp(2rem, 5vw, 3rem) 0;
 	overflow: hidden;
 }
 
 .feedback-title {
-	color: var(--primary-text-color);
-	font-size: 2.5rem;
+	font-size: clamp(2rem, 4vw, 2.5rem);
 	font-weight: 600;
-	margin-bottom: 4rem;
+	margin-bottom: clamp(2rem, 6vw, 4rem);
+	text-align: center;
+	line-height: 1.2;
 }
 
+/* Feedback Slider Styles */
 .feedback-wrapper {
 	display: flex;
 	position: relative;
 	align-items: center;
+	width: 100%;
 }
 
 .feedback-slide {
@@ -37,25 +42,25 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
-	padding: 20px;
-	min-height: 34rem;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	padding: clamp(1rem, 3vw, 2rem);
+	min-height: clamp(20rem, 50vh, 34rem);
 	border-radius: 10px;
 	background: var(--secondary-color);
-	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	box-shadow: var(--shadow-md);
+	transition: all var(--transition-medium);
 }
 
 .feedback-slide:hover {
 	transform: translateY(-10px);
-	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: var(--shadow-lg);
 }
 
 .feedback-img {
 	width: 100%;
 	height: auto;
 	border-radius: 10px;
-	margin: 0 auto 15px;
-	transition: transform 0.3s ease;
+	margin-bottom: 1rem;
+	transition: transform var(--transition-medium);
 }
 
 .feedback-slide:hover .feedback-img {
@@ -63,17 +68,19 @@
 }
 
 .feedback-description {
-	font-size: 1rem;
+	font-size: clamp(0.9rem, 2vw, 1rem);
+	line-height: 1.6;
 	color: var(--first-text-color);
 }
 
+/* Navigation Controls */
 .swiper-button-next,
 .swiper-button-prev {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 44px;
-	height: 44px;
+	width: clamp(36px, 5vw, 44px);
+	height: clamp(36px, 5vw, 44px);
 	background: rgba(0, 0, 0, 0.5);
 	color: var(--second-text-color);
 	border-radius: 50%;
@@ -82,36 +89,35 @@
 	justify-content: center;
 	cursor: pointer;
 	z-index: 10;
-	transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+	transition: all var(--transition-medium);
+	box-shadow: var(--shadow-md);
 }
 
-/* Зменшення розміру стрілок */
 .swiper-button-next::after,
 .swiper-button-prev::after {
-	font-size: 16px; /* Зменшений розмір іконки */
+	font-size: clamp(14px, 2vw, 16px);
 }
 
-/* Ефект при наведенні */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-	background: var(--primary-color); /* Зміна фону при наведенні */
-	color: #fff; /* Колір тексту або іконки стає білим для кращого контрасту */
-	transform: translateY(-50%) scale(1.1); /* Легке збільшення кнопки */
-	box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Посилення тіні */
+	background: var(--primary-color);
+	color: var(--second-text-color);
+	transform: translateY(-50%) scale(1.1);
+	box-shadow: var(--shadow-lg);
 }
 
 .swiper-button-next {
-	right: 10px;
+	right: clamp(10px, 2vw, 20px);
 }
 
 .swiper-button-prev {
-	left: 10px;
+	left: clamp(10px, 2vw, 20px);
 }
 
+/* Pagination Styles */
 .swiper-pagination {
 	position: absolute;
-	bottom: 20px;
+	bottom: clamp(10px, 3vw, 20px);
 	width: 100%;
 	text-align: center;
 }
@@ -120,9 +126,16 @@
 	background-color: var(--primary-color);
 	opacity: 0.5;
 	border-radius: 50%;
-	margin: 0 4px;
-	transition: background-color 0.3s ease, transform 0.3s ease;
+	margin: 0 clamp(4px, 1vw, 8px);
+	width: clamp(8px, 1.5vw, 12px);
+	height: clamp(8px, 1.5vw, 12px);
+	transition: all var(--transition-medium);
 	cursor: pointer;
+}
+
+.swiper-pagination-bullet:hover {
+	opacity: 0.8;
+	transform: scale(1.1);
 }
 
 .swiper-pagination-bullet-active {
@@ -131,47 +144,42 @@
 	transform: scale(1.2);
 }
 
+/* Mobile Optimizations */
 @media (max-width: 768px) {
-	.swiper-pagination-bullet {
-		width: 1.5rem;
-		height: 1.5rem;
-		margin: 0 8px;
-		cursor: pointer;
+	.feedback-section {
+		padding: 1rem 0;
 	}
 
-	.swiper-pagination-bullet:hover {
-		transform: scale(1.1);
-		background-color: var(--primary-color);
-		opacity: 0.8;
-	}
-
-	.swiper-pagination-bullet-active {
-		width: 24px;
-		height: 24px;
-	}
-
-	.swiper-button-next,
-	.swiper-button-prev {
-		width: 36px;
-		height: 36px;
-	}
 	.feedback-slide {
-		padding: 10px;
-		min-height: min-content;
-	}
-	.feedback-title {
-		font-size: 2rem;
-	}
-	.feedback-description {
-		font-size: 0.9rem;
-	}
-
-	.swiper-pagination {
-		bottom: 10px; /* Трохи піднімаємо пагінацію */
+		padding: clamp(0.5rem, 3vw, 1rem);
 	}
 
 	.swiper-button-next,
 	.swiper-button-prev {
 		display: none;
+	}
+
+	.swiper-pagination-bullet {
+		width: clamp(12px, 2vw, 16px);
+		height: clamp(12px, 2vw, 16px);
+	}
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+	.feedback-slide,
+	.feedback-img,
+	.swiper-pagination-bullet,
+	.swiper-button-next,
+	.swiper-button-prev {
+		transition: none;
+	}
+
+	.feedback-slide:hover {
+		transform: none;
+	}
+
+	.feedback-slide:hover .feedback-img {
+		transform: none;
 	}
 }
