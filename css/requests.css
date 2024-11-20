@@ -70,11 +70,6 @@
 	color: var(--primary-color-light);
 }
 
-.requests-btn {
-	width: min(90%, 400px);
-	margin-inline: auto;
-}
-
 /* Enhanced mobile experience */
 @media (max-width: 768px) {
 	.request {

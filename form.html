@@ -1,71 +1,21 @@
-<section id="form" class="form" aria-labelledby="form-title">
+<section id="form" class="form" loading="lazy">
 	<div class="container">
 		<div class="form-wrapper">
-			<h2 id="form-title" class="form-title">ЗВОРОТНIЙ ЗВ'ЯЗОК</h2>
-
-			<form
-				id="feedbackForm"
-				class="form-forms"
-				action="#"
-				method="POST"
-				novalidate
-				autocomplete="on"
-			>
+			<h2 class="form-title">ЗВОРОТНIЙ ЗВ'ЯЗОК</h2>
+			<form id="feedbackForm" class="form-forms">
 				<div class="form-field">
-					<label for="name">
-						Ваше iм'я:
-						<span class="visually-hidden">обов'язкове поле</span>
-					</label>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						required
-						minlength="2"
-						maxlength="50"
-						autocomplete="name"
-						placeholder="Введіть ваше ім'я"
-						aria-required="true"
-					/>
+					<label for="name">Ваше iм'я:</label>
+					<input type="text" id="name" name="name" required />
 				</div>
-
 				<div class="form-field">
-					<label for="email">
-						Ваша адреса електронної пошти:
-						<span class="visually-hidden">обов'язкове поле</span>
-					</label>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						required
-						autocomplete="email"
-						placeholder="example@domain.com"
-						pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-						aria-required="true"
-					/>
+					<label for="email">Ваша адреса електронної пошти:</label>
+					<input type="email" id="email" name="email" required />
 				</div>
-
 				<div class="form-field">
-					<label for="message">
-						Повiдомлення:
-						<span class="visually-hidden">обов'язкове поле</span>
-					</label>
-					<textarea
-						id="message"
-						name="message"
-						rows="5"
-						required
-						minlength="10"
-						maxlength="500"
-						placeholder="Введіть ваше повідомлення"
-						aria-required="true"
-					></textarea>
+					<label for="message">Повiдомлення:</label>
+					<textarea id="message" name="message" rows="5" required></textarea>
 				</div>
-
-				<button type="submit" class="btn form-btn" aria-label="Надіслати форму">
-					Надiслати
-				</button>
+				<button type="submit" class="btn form-btn">Надiслати</button>
 			</form>
 		</div>
 	</div>

@@ -25,6 +25,17 @@
 	--shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
 	/* Scroll */
 	scroll-behavior: smooth;
+	/* Other */
+	--form-padding: clamp(1.5rem, 4vw, 3rem);
+	--form-border-radius: 1.5rem;
+	--form-background: linear-gradient(
+		109deg,
+		rgba(239, 232, 205, 0.28) 0%,
+		rgba(239, 232, 205, 0) 100%
+	);
+	--input-padding: clamp(0.75rem, 2vw, 1rem);
+	--input-background: rgba(255, 255, 255, 0.9);
+	--focus-ring-color: rgba(255, 157, 37, 0.2);
 }
 
 /* Reset Styles with modern defaults */
@@ -36,6 +47,10 @@
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+* {
+	margin: 0 auto;
 }
 
 /* Modern CSS Reset */
@@ -209,16 +224,15 @@ img {
 }
 
 @keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
-
 
 @keyframes zoomOut {
 	0% {
@@ -232,17 +246,15 @@ img {
 }
 
 @keyframes zoomIn {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
+	0% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
-
-
 
 /* Media Query for better mobile experience */
 @media (max-width: 768px) {

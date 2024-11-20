@@ -1,192 +1,180 @@
 .contact {
-    padding: 4rem 0;
-    background: linear-gradient(145deg, var(--background-color), var(--third-color));
-    font-family: var(--primary-font);
+	padding: 4rem 0;
+	background: linear-gradient(
+		145deg,
+		var(--background-color),
+		var(--third-color)
+	);
+	font-family: var(--primary-font);
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
 }
 
-.contact h2, .contact p {
-    opacity: 0;
+.contact h2,
+.contact p {
+	opacity: 0;
 }
 
 .contact ul li {
-    opacity: 0;
+	opacity: 0;
 }
 
 .btn.footer-btn {
-    opacity: 0;
+	opacity: 0;
 }
 
 .social-icons a {
-    opacity: 0;
+	opacity: 0;
 }
 
 .animate-fadeInUp {
-    animation: fadeInUp 1s ease-out forwards;
+	animation: fadeInUp 1s ease-out forwards;
 }
 
 .animate-fadeIn {
-    animation: fadeIn 1s ease-out forwards;
+	animation: fadeIn 1s ease-out forwards;
 }
 
 .animate-zoomIn {
-    animation: zoomIn 0.8s ease-out forwards;
+	animation: zoomIn 0.8s ease-out forwards;
 }
 
 .contact h2 {
-    font-size: 2.5rem;
-    color: var(--second-text-color);
-    text-align: center;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+	font-size: 2.5rem;
+	color: var(--second-text-color);
+	text-align: center;
+	margin-bottom: 1rem;
+	font-weight: 700;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .contact p {
-    text-align: center;
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+	text-align: center;
+	color: var(--secondary-color);
+	font-size: 1.1rem;
+	margin-bottom: 2rem;
 }
 
 .contact ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 2rem;
-    max-width: 400px;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto 2rem;
+	max-width: 400px;
 }
 
 .contact ul li {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    background: rgba(239, 232, 205, 0.05);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 157, 37, 0.2);
-    transition: all 0.3s ease;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	background: rgba(239, 232, 205, 0.05);
+	border-radius: 8px;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 157, 37, 0.2);
+	transition: all 0.3s ease;
 }
 
 .contact ul li:hover {
-    transform: translateY(-2px);
-    background: rgba(239, 232, 205, 0.1);
-    border-color: var(--primary-color);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	transform: translateY(-2px);
+	background: rgba(239, 232, 205, 0.1);
+	border-color: var(--primary-color);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .contact ul li a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: inline-block;
-    width: 100%;
-    transition: color 0.3s ease;
+	color: var(--secondary-color);
+	text-decoration: none;
+	font-size: 1.1rem;
+	display: inline-block;
+	width: 100%;
+	transition: color 0.3s ease;
 }
 
 .contact ul li a:hover {
-    color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .btn.footer-btn {
-    display: block;
-    max-width: 300px;
-    margin: 0 auto 2rem;
-    padding: 1rem 2rem;
-    background: var(--primary-color);
-    color: var(--first-text-color);
-    text-decoration: none;
-    border-radius: 50px;
-    text-align: center;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    box-shadow: 0 4px 15px rgba(255, 157, 37, 0.3);
-}
-
-.btn.footer-btn:hover {
-    transform: translateY(-2px);
-    background: transparent;
-    border-color: var(--primary-color);
-    color: var(--primary-color);
-    box-shadow: 0 6px 20px rgba(255, 157, 37, 0.4);
+	display: block;
+	margin: 0 auto;
+	max-width: 400px;
+	text-align: center;
 }
 
 .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	gap: 1.5rem;
+	margin-top: 2rem;
 }
 
 .social-icons a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(239, 232, 205, 0.05);
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 157, 37, 0.2);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(239, 232, 205, 0.05);
+	transition: all 0.3s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 157, 37, 0.2);
 }
 
 .social-icons a:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 157, 37, 0.1);
-    border-color: var(--primary-color);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	transform: translateY(-3px);
+	background: rgba(255, 157, 37, 0.1);
+	border-color: var(--primary-color);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .social-icons img {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
+	width: 20px;
+	height: 20px;
+	filter: brightness(0) invert(1);
+	opacity: 0.9;
+	transition: opacity 0.3s ease;
 }
 
 .social-icons a:hover img {
-    opacity: 1;
-    filter: invert(65%) sepia(50%) saturate(845%) hue-rotate(334deg) brightness(101%) contrast(101%);
+	opacity: 1;
+	filter: invert(65%) sepia(50%) saturate(845%) hue-rotate(334deg)
+		brightness(101%) contrast(101%);
 }
 
 @media (max-width: 768px) {
-    .contact {
-        padding: 3rem 0;
-    }
+	.contact {
+		padding: 3rem 0;
+	}
 
-    .contact h2 {
-        font-size: 2rem;
-    }
+	.contact h2 {
+		font-size: 2rem;
+	}
 
-    .contact ul {
-        max-width: 100%;
-    }
+	.contact ul {
+		max-width: 100%;
+	}
 
-    .btn.footer-btn {
-        max-width: 100%;
-    }
+	.btn.footer-btn {
+		max-width: 100%;
+	}
 }
 
 @media (max-width: 480px) {
-    .contact h2 {
-        font-size: 1.75rem;
-    }
+	.contact h2 {
+		font-size: 1.75rem;
+	}
 
-    .social-icons {
-        gap: 1rem;
-    }
+	.social-icons {
+		gap: 1rem;
+	}
 
-    .social-icons a {
-        width: 35px;
-        height: 35px;
-    }
+	.social-icons a {
+		width: 35px;
+		height: 35px;
+	}
 }
-
