@@ -12,11 +12,11 @@ const initSwiper = async () => {
                 spaceBetween: 30,
                 grabCursor: true,
                 effect: 'slide',
-                // autoplay: {
-                //     delay: 5000,
-                //     disableOnInteraction: false,
-                //     pauseOnMouseEnter: true
-                // },
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true
+                },
                 pagination: {
                     el: ".swiper-pagination",
                     clickable: true,
