@@ -58,7 +58,7 @@ const initSwiper = async () => {
                     slideChangeTransitionStart: function () {
                         // Add fade effect to text
                         document.querySelectorAll('.feedback-text').forEach(text => {
-                            text.style.opacity = '0';
+                            text.style.opacity = '0.5';
                             text.style.transform = 'translateY(20px)';
                         });
                     },
