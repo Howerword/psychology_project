@@ -114,7 +114,7 @@ ol {
 .container {
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0 clamp(20px, 5vw, 40px);
+	/* padding: 0 clamp(20px, 5vw, 40px); */
 	width: 100%;
 }
 
