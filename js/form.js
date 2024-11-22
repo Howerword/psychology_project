@@ -1,11 +1,11 @@
 document
 	.getElementById("feedbackForm")
 	.addEventListener("submit", function (e) {
-		e.preventDefault(); // Зупиняємо стандартну поведінку відправлення форми
+		e.preventDefault(); 
 
 		const formData = new FormData(this);
 
-		fetch("https://formspree.io/f/mbljgodo", {
+		fetch("https://formspree.io/f/mgvezbzl", {
 			method: "POST",
 			body: formData,
 			headers: {
@@ -15,9 +15,9 @@ document
 			.then((response) => {
 				if (response.ok) {
 					alert(
-						"Повідомлення надіслано успішно! Дякуємо за зворотній зв'язок. Очікуйте відповіді від нашого спеціаліста."
+						"Повідомлення надіслано успішно! Очікуйте відповіді на Ваш запит."
 					);
-					document.getElementById("feedbackForm").reset(); // Очищаємо форму після успішної відправки
+					document.getElementById("feedbackForm").reset();
 				} else {
 					alert("Щось пішло не так. Спробуйте ще раз пізніше.");
 				}
