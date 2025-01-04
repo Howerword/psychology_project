@@ -5,6 +5,15 @@ document
 
 		const formData = new FormData(this);
 
+		// Перейменовуємо поле "contact" у "email" для FormsFree
+		const contact = formData.get("contact");
+		if (!contact) {
+			alert("Будь ласка, введіть спосіб зв'язку (email, Telegram або інше).");
+			return;
+		}
+		formData.delete("contact");
+		formData.append("email", contact); // FormsFree очікує саме поле "email"
+
 		fetch("https://formspree.io/f/mgvezbzl", {
 			method: "POST",
 			body: formData,
